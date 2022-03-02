@@ -183,7 +183,7 @@ input {
 }
 
 .remember_passwd {
-  margin-top: 17px;
+  margin-top: 18px;
 }
 
 .remember_passwd a {
@@ -236,20 +236,15 @@ input {
   margin-left: 300px;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 760px) {
   .main {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 32px 16px 16px;
-    justify-content: center;
-
-    position: absolute;
-    width: 320px;
-    height: 444px;
-    left: 16px;
-    top: 98px;
-    left: 16px;
+    width: 296px;
+    height: 428px;
     top: 98px;
     background: #ffffff;
     border-radius: 8px;
@@ -257,10 +252,10 @@ input {
   h1 {
     width: 296px;
     height: 32px;
-    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
+    margin-bottom: 190px;
   }
   p {
     text-align: center;
@@ -270,7 +265,31 @@ input {
     height: 40px;
     font-size: 16px;
     line-height: 20px;
-    margin-left: 24px;
-    top: 40px;
+    border-bottom: 100px;
+    margin: 0 auto;
+    margin-top: -170px;
+  }
+  input {
+    width: 296px;
+    height: 48px;
+  }
+  form {
+    margin: 0 auto;
+  }
+  .submit {
+    width: 296px;
+    background: #425dc7;
+    border-radius: 8px;
+  }
+  .eye-off {
+    position: absolute;
+    margin-top: -44px;
+    margin-left: 260px;
+  }
+  .remember_passwd a {
+    width: 140px;
+    height: 18px;
+    font-size: 13px;
+    line-height: 18px;
   }
 }
