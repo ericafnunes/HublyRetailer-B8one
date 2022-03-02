@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Olá, tudo bem? 👋</h1>
+      <p>Vamos decolar para grandes dias de vendas.</p>
+      <form>
+        <label for="email">Seu E-mail</label>
+        <input
+          type="text"
+          id="email"
+          name="fname"
+          placeholder="exemplo@email.com"
+        />
+        <span id="error">Este e-mail não existe, você tem outro?</span><br /><br />
+        <label for="psw">Sua Senha</label><br />
+        <input
+          type="text"
+          id="psw"
+          name="lname"
+          placeholder="Digite sua senha"
+        />
+        <img src="assets/eye-off.png"
+        class="eye-off"
+        alt="olho fechado"
+      />
+        <div class="conect_login">
+          <label class="container"
+            >Manter conectado
+            <input type="checkbox" checked="checked" />
+            <span class="checkmark"></span>
+          </label>
+          <div class="remember_passwd">
+            <a href="">Esqueci minha senha</a>
+          </div>
+        </div>
+        <input class="submit" type="submit" value="Entrar" />
+      </form>
+    </div>
+  </body>
+</html>
