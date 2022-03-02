@@ -235,3 +235,41 @@ input {
   margin-top: -44px;
   margin-left: 300px;
 }
+
+@media screen and (max-width: 480px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 16px;
+    justify-content: center;
+
+    position: absolute;
+    width: 328px;
+    height: 444px;
+    left: 16px;
+    top: 98px;
+    background: #ffffff;
+    border-radius: 8px;
+    
+  }
+  h1 {
+    width: 296px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+  }
+  p {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 296px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-left: 24px;
+    top: 40px;
+  }
+}
