@@ -236,7 +236,7 @@ input {
   margin-left: 300px;
 }
 
-@media screen and (max-width: 480px) {
+@media (max-width: 360px) {
   .main {
     display: flex;
     flex-direction: column;
@@ -245,13 +245,14 @@ input {
     justify-content: center;
 
     position: absolute;
-    width: 328px;
+    width: 320px;
     height: 444px;
+    left: 16px;
+    top: 98px;
     left: 16px;
     top: 98px;
     background: #ffffff;
     border-radius: 8px;
-    
   }
   h1 {
     width: 296px;
