@@ -10,12 +10,13 @@
     />
     <title>Login</title>
     <link rel="stylesheet" href="css/style.css" />
+    <script src="./js/script.js"></script>
   </head>
   <body>
     <div class="main">
       <h1>Olá, tudo bem? 👋</h1>
       <p>Vamos decolar para grandes dias de vendas.</p>
-      <form>
+      <form id="form" onsubmit="handleRequestLogin()">
         <label for="email">Seu E-mail</label>
         <input
           type="text"
@@ -23,18 +24,29 @@
           name="fname"
           placeholder="exemplo@email.com"
         />
-        <span id="error">Este e-mail não existe, você tem outro?</span><br /><br />
+        <span id="error" style="display: none"></span><br /><br />
+
         <label for="psw">Sua Senha</label><br />
         <input
-          type="text"
+          type="password"
           id="psw"
           name="lname"
           placeholder="Digite sua senha"
         />
-        <img src="assets/eye-off.png"
-        class="eye-off"
-        alt="olho fechado"
-      />
+        <img
+          id="eye"
+          src="assets/eye-off.png"
+          class="eye-off"
+          alt="olho fechado"
+          onclick="mostrarSenha()"
+        />
+        <img
+          id="eye-on"
+          src="assets/eye-on.png"
+          class="eye-on"
+          alt="olho aberto"
+          style="display: none"
+        />
         <div class="conect_login">
           <label class="container"
             >Manter conectado
@@ -45,7 +57,13 @@
             <a href="">Esqueci minha senha</a>
           </div>
         </div>
-        <input class="submit" type="submit" value="Entrar" />
+        <input
+          class="submit"
+          type="submit"
+          id="sub"
+          value="Entrar"
+          onclick="errorMessage()"
+        />
       </form>
     </div>
   </body>
