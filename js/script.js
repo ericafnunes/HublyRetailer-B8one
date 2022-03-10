@@ -177,3 +177,30 @@ const handleRequestLogin = async (event) => {
     return false;
   }
 };
+
+
+
+const user = async (event) => {
+  let empresaUser = document.getElementById("logo");
+  let nameUser = document.getElementById("user_name");
+  let avatar_user = document.getElementById("avatar_user");
+
+  const response = await fetch(`https://test-final.b8one.academy/user`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+
+  const responseData = await response.json();
+  console.log(responseData);
+
+  if (response.ok) {
+    return true;
+
+  } else {
+    return false;
+  }
+};
+user();
