@@ -5,7 +5,7 @@
 
 body {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   justify-content: center;
   align-items: center;
   background-color: #142159;
@@ -248,16 +248,15 @@ input {
 
 @media (max-width: 760px) {
   .main {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 32px 16px 16px;
     width: 296px;
     height: 428px;
-    top: 98px;
     background: #ffffff;
     border-radius: 8px;
+    position:fixed;
   }
   h1 {
     width: 296px;
@@ -271,6 +270,13 @@ input {
     text-align: center;
     justify-content: center;
     align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.005em;
     width: 296px;
     height: 40px;
     font-size: 16px;
@@ -293,13 +299,17 @@ input {
   }
   .eye-off {
     position: absolute;
-    margin-top: -44px;
-    margin-left: 260px;
+    margin-top: 20px;
+    margin-left: -45px;
   }
   .remember_passwd a {
     width: 140px;
     height: 18px;
     font-size: 13px;
     line-height: 18px;
+  }
+  body{
+    display: flex;
+    justify-content: center;
   }
 }
