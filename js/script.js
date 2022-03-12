@@ -1,5 +1,3 @@
-
-
 function clean() {
   let erro = document.getElementById("error");
   let cleanInput = document.getElementById("email");
@@ -56,10 +54,7 @@ function changeArrow() {
     arrow.style.display = "block";
     arrowShow.style.display = "none";
   }
-  setTimeout(function () {
-    
-  }, 2000);
-  
+  setTimeout(function () {}, 2000);
 }
 
 function changeArrow2() {
@@ -106,7 +101,6 @@ function errorMessage() {
   const emailValido = "academy@b8one.com";
 
   form.addEventListener("submit", function (event) {
-  
     event.preventDefault();
     if (!pswInput.value) {
       error.style.display = "block";
@@ -114,7 +108,7 @@ function errorMessage() {
       error.innerHTML = "Todos os campos devem ser preenchidos!";
       emailInput.style.marginBottom = "15px";
     }
-    if(emailInput.value !== emailValido ){
+    if (emailInput.value !== emailValido) {
       error.style.display = "block";
       error.innerHTML = "Este e-mail não existe, você tem outro?";
     }
@@ -125,12 +119,9 @@ function errorMessage() {
   });
 }
 
-
-function cardNotification(){
+function cardNotification() {
   let notification = document.getElementById("notification_help");
-
 }
-
 
 function mostrarSenha() {
   const inputType = document.getElementById("psw");
@@ -145,11 +136,34 @@ function mostrarSenha() {
   }
 }
 
+const user = async (event) => {
+  const response = await fetch(`https://test-final.b8one.academy/user`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const responseData = await response.json();
+  console.log(responseData);
+
+  if (response.ok) {
+    let empresaUser = document.querySelector(".logo");
+    empresaUser.innerHTML = responseData.organization;
+    let avatarUser = document.querySelector(".avatar");
+    avatarUser.src = responseData.photo;
+    let nameUser = document.querySelector(".user_name");
+    nameUser.innerHTML = responseData.username;
+  } else {
+    return false;
+  }
+};
+user();
+
 const handleRequestLogin = async (event) => {
   let inputEmail = document.getElementById("email").value;
   let inputPassword = document.getElementById("psw").value;
   let errorEmail = document.getElementById("error");
-
 
   const data = {
     email: inputEmail,
@@ -163,7 +177,6 @@ const handleRequestLogin = async (event) => {
     },
     body: JSON.stringify(data),
   });
-
 
   const responseData = await response.json();
 
@@ -179,28 +192,62 @@ const handleRequestLogin = async (event) => {
 };
 
 
+const sales = async (event) => {
 
-const user = async (event) => {
-  let empresaUser = document.getElementById("logo");
-  let nameUser = document.getElementById("user_name");
-  let avatar_user = document.getElementById("avatar_user");
 
-  const response = await fetch(`https://test-final.b8one.academy/user`, {
+  const response = await fetch(`https://test-final.b8one.academy/sales`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
 
-
   const responseData = await response.json();
   console.log(responseData);
 
-  if (response.ok) {
-    return true;
+  console.log(data);
 
+  if (response.ok) {
+    let revenues = document.querySelector(".table_value_cards");
+    revenues.innerHTML = responseData.revenues.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    let ticket = document.getElementById("ticket");
+    ticket.innerHTML = responseData.averageTicket.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    let totalSales = document.getElementById("sales");
+    totalSales.innerHTML = responseData.totalSales
+    console.log("true");
+    return true;
   } else {
     return false;
   }
-};
-user();
+}; 
+sales();
+
+
+
+
+const menu = async (event) => {
+
+  const response = await fetch(`https://test-final.b8one.academy/menu`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const responseData = await response.json();
+  console.log(responseData.menuTree);
+
+  let menu = responseData.menuTree;
+  menu.filter(name => name.name);
+
+  if (response.ok) {
+    
+    return true;
+  } else {
+    return false;
+  }
+}; 
+
+menu();
+
+
