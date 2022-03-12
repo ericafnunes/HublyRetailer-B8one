@@ -1487,5 +1487,8 @@ line-height: 32px;
     margin-left: -350px;
   height: calc(100% - 48px);
 }
+.nav_list{
+  width: 100%;
+}
 }
 
