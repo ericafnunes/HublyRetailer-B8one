@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no">
     <link
       href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
       rel="stylesheet"
@@ -17,7 +18,7 @@
     <header>
       <nav class="nav_row">
         <div class="nav_logo">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg class="burger_menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 12.0001H21" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M3 6H15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M3 17.9999H15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -181,7 +182,7 @@
                   </div>
                   <div class="count_user">
                     <a href="#">Minha Conta</a>
-                    <a href="#">Sair</a>
+                    <a href="#" onclick="confirmExit()">Sair</a>
                   </div>
                 </div>
               </div></a>
@@ -767,13 +768,13 @@
             <h1 class="table_title_h1">Relatório geral</h1>
           </div>
           <div class="table_filter">
-            <div>
+            <div class="table_sales">
               <a class="icon-active-table-blue" href="#">Vendas</a>
             </div>
-            <div>
+            <div class="table_pedidos">
               <a class="icon-active-table" href="#">Pedidos</a>
             </div>
-            <div>
+            <div class="table_reve">
               <a class="icon-active-table" href="#">Revendedores</a>
             </div>
           </div>
@@ -933,7 +934,7 @@
           <span class="line_header"></span>
           <div class="products_line">
             <div class="products_resume">
-              <span>1</span>
+              <span class="resume_numero" >1</span>
               <img src="./assets/image.png" alt="" />
               <span class="product_desc_one"
                 >Computador Gamer Completo Fácil Intel i5 (Terceira Geração) 8GB
@@ -942,13 +943,13 @@
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Eletrônicos</span>
+              <span class="span_type span_products" class="span_products">Eletrônicos</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line background_blue">
             <div class="products_resume">
-              <span>2</span>
+              <span  class="resume_numero">2</span>
               <img src="./assets/phone.png" alt="" />
               <span class="product_desc_one"
                 >Smartphone Samsung Galaxy S21 FE 128GB 5G Wi-Fi Tela 6.4'' Dual
@@ -957,25 +958,25 @@
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Smartphones</span>
+              <span class="span_type span_products" class="span_products">Smartphones</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line">
             <div class="products_resume">
-              <span>3</span>
+              <span class="resume_numero">3</span>
               <img src="./assets/pneu.png" alt="" />
               <span class="product_desc_one" >Pneu Aro 14 175/70R14 Pirelli P400 EVO</span>
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Auto</span>
+              <span class="span_type span_products" class="span_products">Auto</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line background_blue">
             <div class="products_resume">
-              <span>4</span>
+              <span class="resume_numero">4</span>
               <img src="./assets/panela.png" alt="" />
               <span class="product_desc_one"
                 >Panela De Pressão Elétrica 6l Electrolux Chef Pcc20 - 127v</span
@@ -983,13 +984,13 @@
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Eletroportáteis</span>
+              <span class="span_type span_products" class="span_products">Eletroportáteis</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line">
             <div class="products_resume">
-              <span>5</span>
+              <span  class="resume_numero" >5</span>
               <img src="./assets/cafeteira.png" alt="" />
               <span class="product_desc_one"
                 >Cafeteira Expresso Nescafé Dolce Gusto Genio S Plus Vermelha -
@@ -998,13 +999,13 @@
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Eletrônicos</span>
+              <span class="span_type span_products" class="span_products">Eletrônicos</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line background_blue">
             <div class="products_resume">
-              <span>6</span>
+              <span  class="resume_numero" >6</span>
               <img src="./assets/aspirador.png" alt="" />
               <span class="product_desc_one"
                 >Aspirador de Pó e Água WAP GTW 20 Profissional 1600W 20 Litros
@@ -1013,13 +1014,13 @@
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Eletroportáteis</span>
+              <span class="span_type span_products" class="span_products">Eletroportáteis</span>
               <spa class="span_products"n>R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line">
             <div class="products_resume">
-              <span>7</span>
+              <span class="resume_numero">7</span>
               <img src="./assets/filtro.png" alt="" />
               <span class="product_desc_one"
                 >Filtro Purificador e refrigerador de Água Top Life HeOxi (Linha
@@ -1028,13 +1029,13 @@
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Eletroportáteis</span>
+              <span class="span_type span_products" class="span_products">Eletroportáteis</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line background_blue">
             <div class="products_resume">
-              <span>8</span>
+              <span  class="resume_numero">8</span>
               <img src="./assets/watch.png" alt="" />
               <span class="product_desc_one"
                 >Apple Watch Series 3 (GPS) 42mm Caixa Cinza Espacial de Alumínio
@@ -1043,13 +1044,13 @@
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Smartphones</span>
+              <span class="span_type span_products" class="span_products">Smartphones</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line">
             <div class="products_resume">
-              <span>9</span>
+              <span class="resume_numero">9</span>
               <img src="./assets/tv.png" alt="" />
               <span class="product_desc_one"
                 >Smart TV LED 32" Philco PTV32G52S HD e Áudio Dolby Conversor
@@ -1058,19 +1059,19 @@
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Eletrônicos</span>
+              <span class="span_type span_products" class="span_products">Eletrônicos</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
           </div>
           <div class="products_line background_blue">
             <div class="products_resume">
-              <span>10</span>
+              <span  class="resume_numero">10</span>
               <img src="./assets/secador.png" alt="" />
               <span class="product_desc_one" >Secador de Cabelos Mondial Max Travel SC-10 Bivolt</span>
             </div>
             <div class="products_number">
               <span class="span_products">#912304817412-3</span>
-              <span class="span_type" class="span_products">Beleza</span>
+              <span class="span_type span_products" class="span_products">Beleza</span>
               <span class="span_products">R$ 2.999,00</span>
             </div>
         </div>
@@ -1087,15 +1088,15 @@
           <div class="navigation">
             <a href="#" class="color_fixed">
               <a class="pagin_a color_fixed" href="#">
-              <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 1L1 4L4 7" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg width="5" height="8" viewBox="0 0 5 8"  xmlns="http://www.w3.org/2000/svg">
+                <path fill="#ffffff" d="M4 1L1 4L4 7" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </a>
             <a class="color_fixed_blue" href="#">1</a>
             <a class="pagin_a" href="#">2</a>
             <a class="pagin_a" href="#">3</a>
             <a class="pagin_a color_fixed" href="#">
-              <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="5" height="8" viewBox="0 0 5 8" xmlns="http://www.w3.org/2000/svg">
                 <path fill="#ffffff" d="M0.999878 7L3.99988 4L0.999878 0.999996" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>    
             </a>

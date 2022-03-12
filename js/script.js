@@ -93,6 +93,17 @@ function changeArrow4() {
   }
 }
 
+
+function cards() {
+  let cardOne = document.getElementById(".table_sales");
+  
+  if (submenu3.style.display == "none") {
+    submenu3.style.display = "block";
+  } else {
+    submenu3.style.display = "none";
+  }
+}
+
 function errorMessage() {
   const emailInput = document.getElementById("email");
   const pswInput = document.getElementById("psw");
@@ -191,10 +202,7 @@ const handleRequestLogin = async (event) => {
   }
 };
 
-
 const sales = async (event) => {
-
-
   const response = await fetch(`https://test-final.b8one.academy/sales`, {
     method: "GET",
     headers: {
@@ -209,24 +217,26 @@ const sales = async (event) => {
 
   if (response.ok) {
     let revenues = document.querySelector(".table_value_cards");
-    revenues.innerHTML = responseData.revenues.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    revenues.innerHTML = responseData.revenues.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
     let ticket = document.getElementById("ticket");
-    ticket.innerHTML = responseData.averageTicket.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    ticket.innerHTML = responseData.averageTicket.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    });
     let totalSales = document.getElementById("sales");
-    totalSales.innerHTML = responseData.totalSales
+    totalSales.innerHTML = responseData.totalSales;
     console.log("true");
     return true;
   } else {
     return false;
   }
-}; 
+};
 sales();
 
-
-
-
 const menu = async (event) => {
-
   const response = await fetch(`https://test-final.b8one.academy/menu`, {
     method: "GET",
     headers: {
@@ -238,16 +248,41 @@ const menu = async (event) => {
   console.log(responseData.menuTree);
 
   let menu = responseData.menuTree;
-  menu.filter(name => name.name);
+  menu.filter((name) => name.name);
 
   if (response.ok) {
-    
     return true;
   } else {
     return false;
   }
-}; 
+};
 
 menu();
 
+function showAside() {
+  const aside = document.getElementById(".menu_resume");
+  const burgerMenu = document.getElementById(".burger_menu");
+
+  burgerMenu.addEventListener("onclick", function (event) {
+    if (burgerMenu.style.display == "block") {
+      event.preventDefault();
+      burgerMenu.style.zIndex = "-1";
+      burgerMenu.style.width = "100%";
+    }
+    setTimeout(function () {
+      aside.style.display === "none";
+    }, 2000);
+  });
+}
+
+function close() {
+  alert("");
+}
+
+
+
+function confirmExit() {
+  window.location = "./index.html"
+  return "Até logo!";
+}
 
