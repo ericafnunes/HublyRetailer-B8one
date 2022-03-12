@@ -10,7 +10,7 @@
   HTML, CSS, Javascript,API Fetch. 
 
 ####  :arrow_down: Link do deploy:
-<a src="https://hublyretailer.netlify.app/">https://cuboxflix.netlify.app/</a>
+<a src="https://hublyretailer.netlify.app/">https://hublyretailer.netlify.app/</a>
 
 
 ### :floppy_disk: Download - Para clonar o repositório
